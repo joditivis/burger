@@ -49,7 +49,7 @@ var orm = {
             cb(result);
         });
     },
-    // function that inserts a single table entry
+    // function that inserts a new burger into the table
     create: function(table, cols, vals, cb) {
         // construct the query string that inserts a single row into the target table
         var queryString = 'INSERT INTO ' + table;
@@ -61,7 +61,7 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ') ';
 
-        console.log(queryString);
+        // console.log(queryString);
 
         // perform database query
         connection.query(queryString, vals, function(err, result) {

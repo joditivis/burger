@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
 
 // POST route to create/add a burger
 router.post('/api/burgers', function (req, res) {
-    burger.create([
+    burgers.create([
         'burger_name', 'devoured'
     ], [
         req.body.burger_name, req.body.devoured
@@ -34,7 +34,7 @@ router.put('api/burgers/:id', function (req, res) {
 
     console.log('condition', condition);
 
-    burger.update(
+    burgers.update(
         {
             devoured: req.body.devoured
         },
