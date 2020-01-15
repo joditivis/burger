@@ -1,17 +1,51 @@
-<h1>Build a Burger, Eat a Burger</h1>
+<main>
+    <h1>Eat Burgers</h1>
 
-<ul>
-    {{#each burgers}}
-        {{ this.burger_name }}
-    {{/each}}
-</ul>
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                        <div>
+                            <form action="burgers/updateOne/{{this.id}}?_method=PUT" method="POST">
+                                <input type="hidden" name="devoured" value="true">
+                                <button class="waves-effect waves-light btn" type="submit">Devour</button>
+                            </form>
+                        </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
 
-<h2>Add a burger</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="burger-name">Burger Name:</label>
-        <input type="text" name="name" id="burger-name">
+            <div class="col s6">
+                {{#each burgers}}
+                    {{#if this.devoured}}
+                        <div class="devoured-burger">
+                            <div>
+                                {{this.burger_name}}
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
     </div>
 
-    <button type="submit">Add Burger</button>
-</form>
+
+    <h2>Build your own burger</h2>
+    <div class="row">
+        <form action="/burgers/insertInto" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">build your burger here</label>
+                </div>
+                <button type="submit" class="waves-effect waves-light btn">Add Burger</button>
+        </form>
+    </div>
+
+</main>
+
+<script>
+    $('#textarea1').val('New Text');
+    M.textareaAutoResize($('#textarea1'));
+</script>
