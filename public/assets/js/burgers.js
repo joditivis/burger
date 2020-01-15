@@ -1,11 +1,11 @@
 $(function() {
     // click event for "devour" button
-    $('#devour-btn').on('click', function(event) {
+    $('.change-devour').on('click', function(event) {
         var id = $(this).data('id');
         var newDevour = $(this).data('newdevour');
 
         var newDevourState = {
-            devoured: 1
+            devoured: newDevour
         };
 
         // send the PUT request using ajax
@@ -35,7 +35,7 @@ $(function() {
             type: 'POST',
             data: newBurger
         }).then(function() {
-            console.log('new burger created');
+            console.log('new burger created: ${JSON.stringify(newBurger)}');
             // reload page to get updated list
             location.reload();
         });
