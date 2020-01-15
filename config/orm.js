@@ -49,7 +49,9 @@ var orm = {
             cb(result);
         });
     },
+    // function that inserts a single table entry
     insertOne: function(table, cols, vals, cb) {
+        // construct the query string that inserts a single row into the target table
         var queryString = 'INSERT INTO ' + table;
 
         queryString += ' (';
@@ -61,14 +63,16 @@ var orm = {
 
         console.log(queryString);
 
+        // perform database query
         connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
             }
-            // cb = callback 
+            // return results in callback
             cb(result);
         });
     },
+    // function that updates a single table entry
     // objColVals example: {burger_name: Impossible Burger, devoured: true}
     updateOne: function(table, objColVals, condition, cb) {
         var queryString = 'UPDATE ' + table;
