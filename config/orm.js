@@ -40,7 +40,7 @@ function objToSql(ob) {
 
 // object for all SQL statement functions
 var orm = {
-    selectAll: function(tableInput, cb) {
+    all: function(tableInput, cb) {
         var queryString = 'SELECT * FROM ' + tableInput + ';';
         connection.query(queryString, function(err, result) {
             if (err) {
@@ -50,7 +50,7 @@ var orm = {
         });
     },
     // function that inserts a single table entry
-    insertOne: function(table, cols, vals, cb) {
+    create: function(table, cols, vals, cb) {
         // construct the query string that inserts a single row into the target table
         var queryString = 'INSERT INTO ' + table;
 
@@ -74,7 +74,7 @@ var orm = {
     },
     // function that updates a single table entry
     // objColVals example: {burger_name: Impossible Burger, devoured: true}
-    updateOne: function(table, objColVals, condition, cb) {
+    update: function(table, objColVals, condition, cb) {
         var queryString = 'UPDATE ' + table;
 
         queryString += ' SET ';

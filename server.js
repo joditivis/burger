@@ -9,7 +9,7 @@ var app = express();
 app.use(express.static('public'));
 
 // parse application body
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // set handlebars
