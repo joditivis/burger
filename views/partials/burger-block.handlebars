@@ -1,0 +1,8 @@
+<li>
+    {{burger_name}}
+
+    {{#if devour}}
+        {{else}}
+        <button class="devour-btn waves-effect waves-light btn" data-id="{{this.id}}" data-newdevour="{{devour}}">devour</button>
+    {{/if}}
+</li>
