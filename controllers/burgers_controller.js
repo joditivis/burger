@@ -29,7 +29,7 @@ router.post('/api/burgers', function (req, res) {
 });
 
 // PUT route to update burger's devoured state
-router.put('api/burgers/:id', function (req, res) {
+router.put('/api/burgers/:id', function (req, res) {
     var condition = 'id = ' + req.params.id;
 
     console.log('condition', condition);
