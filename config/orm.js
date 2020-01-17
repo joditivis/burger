@@ -20,7 +20,7 @@ function objToSql(ob) {
     // loop through the keys and push the key/value as a string integer array
     for (var key in ob) {
         var value = ob[key];
-        
+
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
 
@@ -40,9 +40,9 @@ function objToSql(ob) {
 
 // object for all SQL statement functions
 var orm = {
-    all: function(tableInput, cb) {
+    all: function (tableInput, cb) {
         var queryString = 'SELECT * FROM ' + tableInput + ';';
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -50,7 +50,7 @@ var orm = {
         });
     },
     // function that inserts a new burger into the table
-    create: function(table, cols, vals, cb) {
+    create: function (table, cols, vals, cb) {
         // construct the query string that inserts a single row into the target table
         var queryString = 'INSERT INTO ' + table;
 
@@ -61,10 +61,10 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ') ';
 
-        // console.log(queryString);
+        console.log('created', queryString);
 
         // perform database query
-        connection.query(queryString, vals, function(err, result) {
+        connection.query(queryString, vals, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -74,7 +74,7 @@ var orm = {
     },
     // function that updates a single table entry
     // objColVals example: {burger_name: Impossible Burger, devoured: true}
-    update: function(table, objColVals, condition, cb) {
+    update: function (table, objColVals, condition, cb) {
         var queryString = 'UPDATE ' + table;
 
         queryString += ' SET ';
@@ -82,8 +82,8 @@ var orm = {
         queryString += ' WHERE ';
         queryString += condition;
 
-        console.log(queryString);
-        connection.query(queryString, function(err, result) {
+        console.log('updated', queryString);
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }

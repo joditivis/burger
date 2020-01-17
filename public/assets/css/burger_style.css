@@ -1,0 +1,82 @@
+body {
+    background-color: #bab277;
+    font-family: 'Righteous', cursive;
+}
+
+#burger-photo {
+    border-bottom: 4px solid #96480c;
+}
+
+.container-fluid {
+    position: relative;
+    text-align: center;
+}
+
+/* text on header photo */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fcfafa;
+    font-family: 'Righteous', cursive;
+    font-size: 65px;
+    text-shadow: 3px 2px #020202;
+}
+
+.to-eat, .eaten {
+    font-size: 25px;
+    color: #363636;
+    font-family: 'Righteous', cursive;
+}
+
+ul {
+    font-size: 18px;
+}
+
+.input-field {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* add burger button */
+.brown {
+    align-content: center;
+}
+
+.input-field input[type=text] + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #96480c !important;
+}
+   
+.input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #fcfafa !important;
+    box-shadow: 0 1px 0 0 #fcfafa !important;
+}
+
+.footer {
+    background-color: #96480c;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 52px;
+    color: white;
+    text-align: center;
+    border-top: 4px solid #363636;
+}
+
+@media only screen and (max-width: 768px) {
+    .centered {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .centered {
+        font-size: 35px;
+    }
+
+    #burger-photo {
+        height: 18rem;
+    }
+}

@@ -1,11 +1,12 @@
-<h2 class="center-align">Make Burgers</h2>
-
-    <br>
-
+<div class="container-fluid">
+    <img src="/assets/img/burger.jpg" width="100%" height="350px" id="burger-photo">
+    <div class="centered">Home of Make a Burger, Eat a Burger</div>
+</div>
+    
     <div class="container">
         <div class="row">
             <div class="col s6 center-align">
-            <p class="to-eat">To be eaten:</p>
+            <p class="to-eat">Fresh Burgers</p>
             {{!-- burgers that have not been devoured --}}
                 <ul>
                 {{#each burgers}}
@@ -17,7 +18,7 @@
             </div>
 
             <div class="col s6 center-align">
-            <p class="eaten">Eaten:</p>
+            <p class="eaten">Eaten Burgers</p>
             {{!-- when a burger has been devoured, put burger here --}}
                 <ul>
                     {{#each burgers}}
@@ -28,21 +29,33 @@
                 </ul>
             </div>            
         </div>
-    </div>
 
     <br>
     <br>
 
     <div class="row">
         <form class="col s12" id="create-burger">
-            <div class="row">
-                <div class="input-field col s6">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">build your own burger here</label>
-                </div>
-                <button type="submit" class="waves-effect waves-light btn">Add Burger</button>
+            <div class="input-field">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">build your own burger here</label>
+                <button type="submit" class="waves-effect waves-light brown btn-small">add burger</button>
+            </div>
         </form>
     </div>
+
+    </div>
+
+<br>
+<br>
+
+    <footer class="footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="center-align">© 2020 Copyright joditivis</div>
+                <div class="center-align"><a class="github-link" href="https://github.com/joditivis">GitHub</a></div>
+            </div>
+        </div>
+    </footer>
 
 {{!-- Materialize JS for text area --}}
 <script>

@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
     // click event for "devour" button
-    $('.change-devour').on('click', function(event) {
+    $('.change-devour').on('click', function (event) {
         var id = $(this).data('id');
         // var newDevour = $(this).data('newdevour');
 
@@ -13,7 +13,7 @@ $(function() {
             type: 'PUT',
             data: newDevourState
         }).then(
-            function(result) {
+            function (result) {
                 console.log('changed devour state to', result);
 
                 location.reload();
@@ -22,7 +22,7 @@ $(function() {
     });
 
     // click event for adding a new burger
-    $('#create-burger').on('submit', function(event) {
+    $('#create-burger').on('submit', function (event) {
         event.preventDefault();
 
         var newBurger = {
@@ -34,7 +34,7 @@ $(function() {
         $.ajax('/api/burgers', {
             type: 'POST',
             data: newBurger
-        }).then(function() {
+        }).then(function () {
             console.log('new burger created: ${JSON.stringify(newBurger)}');
             // reload page to get updated list
             location.reload();
