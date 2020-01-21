@@ -25,6 +25,7 @@ Eat a Burger is a full stack application using MySQL, Node, Express, Handlebars,
 * MySQL (https://www.mysql.com/)
 * Express (http://expressjs.com/)
 * ORM (Object Relational Mapping)
+* Deployed with Heroku (https://www.heroku.com/)
 ---
 ## Installations:
 ```
